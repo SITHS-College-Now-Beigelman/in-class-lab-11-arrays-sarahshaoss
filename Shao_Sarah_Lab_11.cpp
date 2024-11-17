@@ -76,10 +76,12 @@ int main()
 
     double beta[100]; //array is 100 boxes
     int a; //counter
+    int sum = 0; //sum of all the boxes starts at 0
 
     for (a = 1; a <100; a++) //goes through array
     {
         beta[a] = rand() % 100 + 1; //puts a random number in each of the boxes
+        sum = sum + beta[a]; //adds all the numbers in the array
     }
 
     for (a = 1; a <100; a++) //goes through array
@@ -89,7 +91,8 @@ int main()
             hundredCounter = hundredCounter + 1; //add 1 to the counter
         }
     }
-    cout << "Elements equal to 100: \n"<< hundredCounter << endl;
+   cout << "The average of all the numbers in the array is " << sum/100 << endl;
+    cout << "Elements equal to 100: "<< hundredCounter << endl;
     //prints out the number of elements equal to 100
 }
 
@@ -99,6 +102,6 @@ int main()
 400 441 484 529 576 75 78 81 84 87 
 90 93 96 99 102 105 108 111 114 117 
 120 123 126 129 132 135 138 141 144 147 
-Elements equal to 100: 
-1
+The average of all the numbers in the array is 49
+Elements equal to 100: 1
 */
