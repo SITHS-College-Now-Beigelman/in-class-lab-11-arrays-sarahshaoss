@@ -7,78 +7,98 @@
 #include <cstdlib>
 #include <ctime>
 
-using namespace std;
+using namespace std; //shortcut
 
 
 int main()
 {
-    srand(time(0));
-    
-    const int ARRAY_SIZE = 50;
-    double alpha[ARRAY_SIZE];
-    int i;
-    int hundredCounter;
-    int counter = 0;
+    srand(time(0)); //random number generator
 
-    for (i = 0; i <25; i++)
+    const int ARRAY_SIZE = 50; //array size
+    double alpha[ARRAY_SIZE]; //array is 50 boxes
+    int i; //counter
+    int hundredCounter; //counter for 100
+
+    for (i = 0; i <25; i++) //first 25 boxes
     {
-        alpha[i] = pow(i, 2);
+        alpha[i] = pow(i, 2); //square of index
     }
 
-    for (i = 25; i < 100; i++)
+    for (i = 25; i < 50; i++) //last 25 boxes
     {
-        alpha[i] = i * 3;
+        alpha[i] = i * 3; //multiply by 3
     }
 
-    if (counter < 10)
-    {
-        cout << "hi";
-        cout << alpha[counter];
-        counter++;
-    }
-
-    double beta[100];
-    int a;
-
-    for (a = 1; a <100; a++)
-    {
-        beta[a] = rand() % 100 + 1;
-    }
-    cout << endl;
-
-    for (a = 1; a <100; a++)
-    {
-        if (beta[a] == 100)
+    for (i = 0; i < 50; i++) //goes through array
+      {
+        if (i < 10) //first 10 boxes
         {
-            hundredCounter = hundredCounter + 1;
-            cout << "Elements equal to 100: \n"<< hundredCounter << endl;
+          cout << alpha[i] << " ";
+        }
+        else if (i == 10) // at the 11th box
+        {
+          cout << endl;
+          cout << alpha[i] << " ";
+        }
+        else if (i < 20) //next 10 boxes
+          {
+            cout << alpha[i] << " ";
+          }
+        else if (i == 20) //at the 21st box
+        {
+          cout << endl;
+          cout << alpha[i] << " ";
+        }
+        else if (i < 30) //next 10 boxes
+          {
+            cout << alpha[i] << " ";
+          }
+        else if (i == 30) //at the 31st box
+        {
+          cout << endl;
+          cout << alpha[i] << " ";
+        }
+        else if (i < 40) //next 10 boxes
+          {
+            cout << alpha[i] << " ";
+          }
+        else if (i == 40) //at the 41st box
+        {
+          cout << endl;
+          cout << alpha[i] << " ";
+        }
+        else if (i < 50) //next 10 boxes
+          {
+            cout << alpha[i] << " ";
+          }
+      }
+  cout << endl; //end line after printing all the boxes of the array
+
+    double beta[100]; //array is 100 boxes
+    int a; //counter
+
+    for (a = 1; a <100; a++) //goes through array
+    {
+        beta[a] = rand() % 100 + 1; //puts a random number in each of the boxes
+    }
+
+    for (a = 1; a <100; a++) //goes through array
+    {
+        if (beta[a] == 100) //if the box is 100
+        {
+            hundredCounter = hundredCounter + 1; //add 1 to the counter
         }
     }
+    cout << "Elements equal to 100: \n"<< hundredCounter << endl;
+    //prints out the number of elements equal to 100
 }
 
-/* for (i = 0; i < 10; i++)
-    {
-        cout << alpha[i] << " " ;
-    }
-    cout << endl;
-    for (i = 9; i < 20; i++)
-    {
-        cout << alpha[i] << " ";
-    }
-    cout << endl;
-    for (i = 19; i < 30; i++)
-    {
-        cout << alpha[i] << " ";
-    }
-    cout << endl;
-    for (i = 29; i < 40; i++)
-    {
-        cout << alpha[i] << " ";
-    }
-    cout << endl;
-    for (i = 39; i < 50; i++)
-    {
-        cout << alpha[i] << " ";
-    }
-    cout << endl;
-    cout << alpha[50]; */
+/* 
+0 1 4 9 16 25 36 49 64 81 
+100 121 144 169 196 225 256 289 324 361 
+400 441 484 529 576 75 78 81 84 87 
+90 93 96 99 102 105 108 111 114 117 
+120 123 126 129 132 135 138 141 144 147 
+Elements equal to 100: 
+1
+*/
